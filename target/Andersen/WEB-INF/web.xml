@@ -1,0 +1,37 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+  <display-name>Andersen_war_exploded</display-name>
+  <servlet>
+    <servlet-name>createUser</servlet-name>
+    <servlet-class>ru.andersen.servlet.CreateUserServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>createUser</servlet-name>
+    <url-pattern>/create</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>deleteUser</servlet-name>
+    <servlet-class>ru.andersen.servlet.DeleteUserServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>deleteUser</servlet-name>
+    <url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>updateServlet</servlet-name>
+    <servlet-class>ru.andersen.servlet.UpdateUserServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>updateServlet</servlet-name>
+    <url-pattern>/update</url-pattern>
+  </servlet-mapping>
+</web-app>
