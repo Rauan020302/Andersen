@@ -1,10 +1,10 @@
-C:\Users\Рауан\OneDrive\Рабочий стол\Andersen\Andersen\src\main\java\ru\andersen\servlet\UpdateUserServlet.java
-C:\Users\Рауан\OneDrive\Рабочий стол\Andersen\Andersen\src\main\java\ru\andersen\app\Main.java
-C:\Users\Рауан\OneDrive\Рабочий стол\Andersen\Andersen\src\main\java\ru\andersen\dto\UserForm.java
-C:\Users\Рауан\OneDrive\Рабочий стол\Andersen\Andersen\src\main\java\ru\andersen\repository\UserRepositoryImpl.java
-C:\Users\Рауан\OneDrive\Рабочий стол\Andersen\Andersen\src\main\java\ru\andersen\servlet\DeleteUserServlet.java
-C:\Users\Рауан\OneDrive\Рабочий стол\Andersen\Andersen\src\main\java\ru\andersen\service\UserServiceImpl.java
-C:\Users\Рауан\OneDrive\Рабочий стол\Andersen\Andersen\src\main\java\ru\andersen\repository\UserRepository.java
-C:\Users\Рауан\OneDrive\Рабочий стол\Andersen\Andersen\src\main\java\ru\andersen\servlet\CreateUserServlet.java
-C:\Users\Рауан\OneDrive\Рабочий стол\Andersen\Andersen\src\main\java\ru\andersen\model\User.java
-C:\Users\Рауан\OneDrive\Рабочий стол\Andersen\Andersen\src\main\java\ru\andersen\service\UserService.java
+C:\Andersen\AndersenUser\Andersen\src\main\java\ru\andersen\repository\UserRepository.java
+C:\Andersen\AndersenUser\Andersen\src\main\java\ru\andersen\servlet\CreateUserServlet.java
+C:\Andersen\AndersenUser\Andersen\src\main\java\ru\andersen\repository\UserRepositoryImpl.java
+C:\Andersen\AndersenUser\Andersen\src\main\java\ru\andersen\Main.java
+C:\Andersen\AndersenUser\Andersen\src\main\java\ru\andersen\service\UserServiceImpl.java
+C:\Andersen\AndersenUser\Andersen\src\main\java\ru\andersen\model\User.java
+C:\Andersen\AndersenUser\Andersen\src\main\java\ru\andersen\dto\UserForm.java
+C:\Andersen\AndersenUser\Andersen\src\main\java\ru\andersen\servlet\DeleteUserServlet.java
+C:\Andersen\AndersenUser\Andersen\src\main\java\ru\andersen\servlet\UpdateUserServlet.java
+C:\Andersen\AndersenUser\Andersen\src\main\java\ru\andersen\service\UserService.java

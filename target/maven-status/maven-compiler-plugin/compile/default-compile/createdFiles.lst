@@ -1,9 +1,9 @@
 ru\andersen\dto\UserForm$UserFormBuilder.class
 ru\andersen\model\User.class
-ru\andersen\app\Main.class
 ru\andersen\servlet\DeleteUserServlet.class
 ru\andersen\model\User$UserBuilder.class
 ru\andersen\repository\UserRepository.class
+ru\andersen\Main.class
 ru\andersen\service\UserService.class
 ru\andersen\repository\UserRepositoryImpl.class
 ru\andersen\dto\UserForm.class

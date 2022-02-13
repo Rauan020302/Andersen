@@ -25,7 +25,7 @@
     </c:forEach>
 </table>
 <h1></h1>
-<form action="/my_project_war/create" method="post">
+<form action="/Andersen.war/create" method="post">
     <%--<div>--%>
     <input id="firstName" name="firstName" placeholder="Enter First Name">
     <input id="lastName" name="lastName" placeholder="Enter Last Name">
