@@ -29,13 +29,31 @@ public class UserServiceImpl implements UserService{
     }
 
     public Boolean isDeleteUser(Long userId) {
-        return usersRepository.findById(userId).isPresent();
+        return usersRepository.findById(userId) == null;
     }
 
     @Override
-    public List<UserForm> getAll() {
-        return from(usersRepository.findAll());
+    public void deleteById(Long userId) {
+        usersRepository.deleteById(userId);
     }
 
+    @Override
+    public User findById(Long userId) {
+        if (usersRepository.findById(userId)!=null) {
+            return usersRepository.findById(userId);
+        } else {
+            throw new IllegalArgumentException("user not found");
+        }
+    }
+
+    @Override
+    public List<User> getAll() {
+        return usersRepository.findAll();
+    }
+
+    @Override
+    public void updateUser(User user) {
+        usersRepository.updateUser(user);
+    }
 
 }

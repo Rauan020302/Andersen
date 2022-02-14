@@ -2,6 +2,7 @@ package ru.andersen.repository;
 
 import ru.andersen.model.User;
 import ru.andersen.service.UserService;
+import ru.andersen.service.UserServiceImpl;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -32,11 +33,11 @@ public class UserRepositoryImpl implements UserRepository{
 
     public UserRepositoryImpl(DataSource dataSource) {
         this.dataSource = dataSource;
+        this.userService = new UserServiceImpl(this);
     }
 
     private static final Function<ResultSet, User> userMapper = resultSet -> {
         try {
-//            if (!resultSet.wasNull())
             return User.builder()
                     .id(resultSet.getLong("id"))
                     .firstName(resultSet.getString("first_name"))
@@ -50,7 +51,7 @@ public class UserRepositoryImpl implements UserRepository{
     };
 
     @Override
-    public void updateUser(User user) { //проверить
+    public void updateUser(User user) {
 
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_USER)) {
@@ -72,12 +73,13 @@ public class UserRepositoryImpl implements UserRepository{
     }
 
     @Override
-    public void deleteById(User user) { // проверить
-        if (!userService.isDeleteUser(user.getId())) {
+    public void deleteById(Long userId) {
+        UserService userService = new UserServiceImpl(this);
+        if (!userService.isDeleteUser(userId)) {
             try (Connection connection = dataSource.getConnection();
                  PreparedStatement statement = connection.prepareStatement(SQL_DELETE_USER)) {
 
-                statement.setLong(1, user.getId());
+                statement.setLong(1, userId);
 
                 int affectedRows = statement.executeUpdate();
 
@@ -136,7 +138,7 @@ public class UserRepositoryImpl implements UserRepository{
     }
 
     @Override
-    public Optional<User> findById(Long userId) {
+    public User findById(Long userId) {
 
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_FIND_BY_ID)) {
@@ -144,11 +146,11 @@ public class UserRepositoryImpl implements UserRepository{
 
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
-                    return Optional.of(userMapper.apply(resultSet));
+                    return userMapper.apply(resultSet);
+                } else {
+                    throw new IllegalArgumentException("user not found");
                 }
-                return Optional.empty();
             }
-
         } catch (SQLException e) {
             throw new IllegalArgumentException(e);
         }
